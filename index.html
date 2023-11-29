@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Mad Libs Form</title>
+</head>
+<body>
+    <img class="timg" src="MadLibs.png" alt="Mad Libs Image">
+    <form action="/" method="post">
+        <div class="form-group">
+            <label for="adjective">Adjective:</label>
+            <input type="text" name="adjective" required><br>
+        </div>
+
+        <div class="form-group">
+            <label for="noun">Noun:</label>
+            <input type="text" name="noun" required><br>
+        </div>
+
+        <div class="form-group">
+            <label for="pluralNoun">Plural Noun:</label>
+            <input type="text" name="pluralNoun" required><br>
+        </div>
+
+        <div class="form-group">
+            <label for="personname">Person In Room (FEMALE):</label>
+            <input type="text" name="personname" required><br>
+        </div>
+
+        <div class="form-group">
+            <label for="adjective2">Adjective:</label>
+            <input type="text" name="adjective2" required><br>
+        </div>
+
+        <div class="form-group">
+            <label for="clothing">Artical Of Clothing:</label>
+            <input type="text" name="clothing" required><br>
+        </div>
+
+        <div class="form-group">
+            <label for="noun2">Noun:</label>
+            <input type="text" name="noun2" required><br>
+        </div>
+
+        <div class="form-group">
+            <label for="city">A City:</label>
+            <input type="text" name="city" required><br>
+        </div>
+
+        <div class="form-group">
+            <label for="pluralNoun2">Plural Noun:</label>
+            <input type="text" name="pluralNoun2" required><br>
+        </div>
+
+        <div class="form-group">
+            <label for="adjective3">Adjective:</label>
+            <input type="text" name="adjective3" required><br>
+        </div>
+
+        <button type="submit">Generate Mad Lib</button>
+    </form>
+
+    <footer>
+        <h1 style="text-align: center; color: #fff;">Addendum</h1>
+        <p>This code is a simple server-side application using Node.js and the Express.js framework to create a Mad Libs generator. Mad Libs is a word game where players fill in the blanks of a pre-written story with random words of a certain type (adjective, noun, etc.) to create a humorous or nonsensical story.</p>
+
+    <p>Here's a breakdown of the code:</p>
+
+    <ol>
+        <li><strong>Dependencies:</strong>
+            <ul>
+                <li><code>express</code>: A web framework for Node.js.</li>
+                <li><code>body-parser</code>: Middleware to parse incoming request bodies in a middleware before your handlers, available under <code>req.body</code>.</li>
+            </ul>
+        </li>
+
+        <li><strong>Create an Express app:</strong>
+            <ul>
+                <li><code>const app = express();</code></li>
+                <li><code>const port = 3000;</code></li>
+            </ul>
+        </li>
+
+        <li><strong>Middleware Setup:</strong>
+            <ul>
+                <li><code>body-parser</code> is used to parse URL-encoded data.</li>
+                <li><code>app.use(bodyParser.urlencoded({ extended: true }));</code></li>
+            </ul>
+        </li>
+
+        <li><strong>Static File Serving:</strong>
+            <ul>
+                <li>Serves static files (like <code>index.html</code>) from the current directory.</li>
+                <li><code>app.use(express.static(__dirname));</code></li>
+            </ul>
+        </li>
+
+        <li><strong>Routing:</strong>
+            <ul>
+                <li>Handles GET requests to the root URL by sending the <code>index.html</code> file.</li>
+                <li><code>app.get('/', (req, res) => { /* ... */ });</code></li>
+
+                <li>Handles POST requests to the root URL with the Mad Libs form data.</li>
+                <li><code>app.post('/', (req, res) => { /* ... */ });</code></li>
+            </ul>
+        </li>
+
+        <li><strong>Server Listening:</strong>
+            <ul>
+                <li>Starts the server and listens on port 3000.</li>
+                <li><code>app.listen(port, () => { /* ... */ });</code></li>
+            </ul>
+        </li>
+    </ol>
+
+    <p>In summary, this code sets up a server using Express, serves static files, handles form submissions, generates a Mad Lib story based on the form data, and sends back an HTML response displaying the generated story. The server listens on port 3000. The Mad Lib story template is embedded in the HTML response, and it uses basic CSS for styling.</p>
+
+    </footer>
+</body>
+</html>
